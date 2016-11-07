@@ -7,13 +7,22 @@
   <artifactId>assassin</artifactId>
   <version>1</version>
 
+  <modules>
+    <module>assassin-core</module>
+    <module>assassin-dao</module>
+    <module>assassin-service</module>
+    <module>assassin-rest</module>
+  </modules>
+
   <properties>
     <!-- libraries -->
     <java.version>1.8</java.version>
+    <javac>1.8</javac>
     <junit.version>4.12</junit.version>
     <spring.version>4.2.5.RELEASE</spring.version>
     <!-- maven plugins -->
     <maven.version>3.3</maven.version>
+    <tomcat.version>7.0.55</tomcat.version>
     <checkstyle.plugin.version>2.17</checkstyle.plugin.version>
   </properties>
 
@@ -49,10 +58,15 @@
   <build>
     <pluginManagement>
       <plugins>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven.version}</version>
+          <configuration>
+            <source>${javac.version}</source>
+            <target>${javac.version}</target>
+          </configuration>
         </plugin>
 
       </plugins>
