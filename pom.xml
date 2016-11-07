@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0  http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mercergroup.app</groupId>
+  <artifactId>assassin</artifactId>
+  <version>1</version>
+
+  <properties>
+    <!-- libraries -->
+    <java.version>1.8</java.version>
+    <junit.version>4.12</junit.version>
+    <spring.version>4.2.5.RELEASE</spring.version>
+    <!-- maven plugins -->
+    <maven.version>3.3</maven.version>
+    <checkstyle.plugin.version>2.17</checkstyle.plugin.version>
+  </properties>
+
+
+  <dependencyManagement>
+    <!-- Spring dependencies -->
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <!-- Testing dependencies -->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven.version}</version>
+        </plugin>
+
+      </plugins>
+
+    </pluginManagement>
+
+  </build>
+
+
+
+</project>
