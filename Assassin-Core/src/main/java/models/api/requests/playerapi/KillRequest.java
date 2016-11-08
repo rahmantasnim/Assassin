@@ -1,12 +1,13 @@
 package models.api.requests.playerapi;
 
+import models.api.requests.CommonRequest;
+
 /**
- * Created by bekreth on 11/6/16.
+ * A request for the user to kill their target
  */
-public class KillRequest {
+public class KillRequest extends CommonRequest {
 
     private int gameroomId;
-    private int userId;
     private String killVerification;
 
     public int getGameroomId() {
@@ -15,14 +16,6 @@ public class KillRequest {
 
     public void setGameroomId(int gameroomId) {
         this.gameroomId = gameroomId;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public String getKillVerification() {

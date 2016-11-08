@@ -1,12 +1,13 @@
 package models.api.requests.gameapi;
 
+import models.api.requests.CommonRequest;
+
 /**
  * A request sent by a player to leave a game.
  */
-public class LeaveGameRequest {
+public class LeaveGameRequest extends CommonRequest {
 
     private int gameroomId;
-    private int userId;
 
     public int getGameroomId() {
         return gameroomId;
@@ -16,11 +17,4 @@ public class LeaveGameRequest {
         this.gameroomId = gameroomId;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 }

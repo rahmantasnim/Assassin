@@ -1,13 +1,14 @@
 package models.api.requests.gameapi;
 
+import models.api.requests.CommonRequest;
+
 /**
  * A request by a user to join a game previously setup by the admin.
  */
-public class JoinGameRequest {
+public class JoinGameRequest extends CommonRequest {
 
     private int gameroomId;
     private String roomPassword;
-    private int userId;
 
     public int getGameroomId() {
         return gameroomId;
@@ -23,13 +24,5 @@ public class JoinGameRequest {
 
     public void setRoomPassword(String roomPassword) {
         this.roomPassword = roomPassword;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 }

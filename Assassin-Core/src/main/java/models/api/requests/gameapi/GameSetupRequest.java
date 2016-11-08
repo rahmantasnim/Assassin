@@ -1,17 +1,18 @@
 package models.api.requests.gameapi;
 
+import models.api.requests.CommonRequest;
+
 import java.util.Date;
 
 /**
  * Request to start a new game sent by game admin
  */
-public class GameSetupRequest {
+public class GameSetupRequest extends CommonRequest {
     private String roomPassword;
     private int winCondition;
     private long updatePushTimer;
     private long staleGameTimer;
     private Date endDate;
-    private int adminUserId;
 
     public String getRoomPassword() {
         return roomPassword;
@@ -51,13 +52,5 @@ public class GameSetupRequest {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
-    }
-
-    public int getAdminUserId() {
-        return adminUserId;
-    }
-
-    public void setAdminUserId(int adminUserId) {
-        this.adminUserId = adminUserId;
     }
 }

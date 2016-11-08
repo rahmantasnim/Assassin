@@ -1,7 +1,10 @@
 package models.api.responses.gameapi;
 
+import models.api.responses.CommonResponse;
+
 /**
- * Created by bekreth on 11/6/16.
+ * A response to a LeaveGameRequest
  */
-public class LeaveGameResponse {
+public class LeaveGameResponse extends CommonResponse {
+
 }

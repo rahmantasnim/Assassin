@@ -1,11 +1,19 @@
 package models.api.requests.playerapi;
 
-/**
- * Created by bekreth on 11/7/16.
- */
-public class MyTargetRequest {
+import models.api.requests.CommonRequest;
 
-    private int userId;
+/**
+ * A request by a player to get information about their current target.
+ */
+public class MyTargetRequest extends CommonRequest {
+
     private int gameroomId;
 
+    public int getGameroomId() {
+        return gameroomId;
+    }
+
+    public void setGameroomId(int gameroomId) {
+        this.gameroomId = gameroomId;
+    }
 }

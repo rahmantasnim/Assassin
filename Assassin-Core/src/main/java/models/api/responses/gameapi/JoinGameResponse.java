@@ -1,7 +1,11 @@
 package models.api.responses.gameapi;
 
+import models.api.responses.CommonResponse;
+
 /**
- * Created by bekreth on 11/6/16.
+ * A response to player's request to join a game.
  */
-public class JoinGameResponse {
+public class JoinGameResponse extends CommonResponse {
+
+
 }

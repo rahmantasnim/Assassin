@@ -1,12 +1,13 @@
 package models.api.responses.gameapi;
 
+import models.api.responses.CommonResponse;
+
 /**
- * Created by bekreth on 11/6/16.
+ * A response to setting up a gameroom.
  */
-public class GameSetupResponse {
+public class GameSetupResponse extends CommonResponse{
 
     private int gameroomId;
-
 
     public int getGameroomId() {
         return gameroomId;

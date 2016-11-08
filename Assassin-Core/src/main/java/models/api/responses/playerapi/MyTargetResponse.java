@@ -1,9 +1,11 @@
 package models.api.responses.playerapi;
 
+import models.api.responses.CommonResponse;
+
 /**
- * Created by bekreth on 11/7/16.
+ * A response to a MyTargetRequest, providing player with the profile information of their target.
  */
-public class MyTargetResponse {
+public class MyTargetResponse extends CommonResponse {
 
     private Player myTarget;
 

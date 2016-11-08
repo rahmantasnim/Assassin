@@ -28,7 +28,7 @@ public interface PlayerApi {
     public GameStateResponse getGameState(GameStateRequest request);
 
     /**
-     * A request for a player to get their target.
+     * A request for a player to get their target's profile.
      *
      * @param request
      * @return
