@@ -7,6 +7,13 @@
   <groupId>com.mercergroup.app</groupId>
   <artifactId>assassin-rest</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.mercergroup.app</groupId>
+      <artifactId>assassin-core</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
 
 
 </project>
