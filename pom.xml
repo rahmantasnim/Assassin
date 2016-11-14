@@ -5,27 +5,31 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mercergroup.app</groupId>
   <artifactId>assassin</artifactId>
-  <version>1</version>
+  <name>Assassin</name>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
 
   <modules>
-    <module>assassin-core</module>
-    <module>assassin-dao</module>
-    <module>assassin-service</module>
-    <module>assassin-rest</module>
+    <module>Assassin-Core</module>
+    <module>Assassin-DAO</module>
+    <module>Assassin-Service</module>
+    <module>Assassin-Rest</module>
   </modules>
 
   <properties>
+    <project.version>1.0-SNAPSHOT</project.version>
     <!-- libraries -->
     <java.version>1.8</java.version>
     <javac>1.8</javac>
     <junit.version>4.12</junit.version>
+    <cargo.version>1.4.6</cargo.version>
     <spring.version>4.2.5.RELEASE</spring.version>
     <!-- maven plugins -->
     <maven.version>3.3</maven.version>
     <tomcat.version>7.0.55</tomcat.version>
     <checkstyle.plugin.version>2.17</checkstyle.plugin.version>
+    <maven.tomcat.plugin.version>2.2</maven.tomcat.plugin.version>
   </properties>
-
 
   <dependencyManagement>
     <!-- Spring dependencies -->
@@ -51,14 +55,13 @@
         <artifactId>junit</artifactId>
         <version>${junit.version}</version>
       </dependency>
-
     </dependencies>
   </dependencyManagement>
 
   <build>
     <pluginManagement>
       <plugins>
-
+        <!-- compiler options for all modules -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -68,13 +71,22 @@
             <target>${javac.version}</target>
           </configuration>
         </plugin>
-
+        <!-- Specify container as tomcat across modules -->
+        <plugin>
+          <groupId>org.codehaus.plexus</groupId>
+          <artifactId>cargo-maven2-plugin</artifactId>
+          <version>${cargo.version}</version>
+          <configuration>
+            <container>org.apache.tomcat</container>
+            <artifactInstaller>
+              <groupId>org.apache.tomcat</groupId>
+              <artifactId>apache-tomcat</artifactId>
+              <version>${tomcat.version}</version>
+            </artifactInstaller>
+          </configuration>
+        </plugin>
       </plugins>
-
     </pluginManagement>
-
   </build>
-
-
 
 </project>
