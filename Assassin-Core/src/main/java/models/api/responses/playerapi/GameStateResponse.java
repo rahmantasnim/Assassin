@@ -1,6 +1,9 @@
 package models.api.responses.playerapi;
 
+import models.Player;
 import models.api.responses.CommonResponse;
+
+import java.util.List;
 
 /**
  * Provides the current game state of living and dead players.

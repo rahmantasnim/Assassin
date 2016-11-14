@@ -4,16 +4,48 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>com.mercergroup.app</groupId>
+    <artifactId>assassin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>./..</relativePath>
+  </parent>
+
   <groupId>com.mercergroup.app</groupId>
   <artifactId>assassin-rest</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <profiles>
+    <profile>
+      <id>main-build</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>${maven.tomcat.plugin.version}</version>
+            <configuration>
+              <path>/assassin</path>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
   <dependencies>
+    <dependency>
+      <groupId>org.apache.tomcat.maven</groupId>
+      <artifactId>tomcat7-maven-plugin</artifactId>
+      <version>${maven.tomcat.plugin.version}</version>
+      <type>maven-plugin</type>
+    </dependency>
+
     <dependency>
       <groupId>com.mercergroup.app</groupId>
       <artifactId>assassin-core</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
-
 
 </project>
