@@ -1,4 +1,4 @@
-package Dao;
+package dao;
 
 /**
  * Created by Darargon on 11/6/16.
