@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Request to start a new game sent by game admin
  */
-public class GameSetupRequest extends CommonRequest {
+public class SetupGameRequest extends CommonRequest {
 
     private String roomPassword;
     private int winCondition;
