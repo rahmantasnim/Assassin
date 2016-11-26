@@ -7,12 +7,21 @@ import java.util.UUID;
  */
 public class CommonRequest {
 
+    private int userId;
     private int playerId;
     private int gameroomId;
     private final String requestId;
 
     public CommonRequest() {
         this.requestId = UUID.randomUUID().toString();
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public int getGameroomId() {

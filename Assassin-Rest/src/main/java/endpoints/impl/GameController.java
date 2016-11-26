@@ -1,7 +1,10 @@
 package endpoints.impl;
 
 import endpoints.GameApi;
+import exceptions.rest.verification.CommonRequestException;
+import exceptions.rest.verification.RequestErrorCodes;
 import exceptions.rest.verification.RestRequestException;
+import exceptions.rest.verification.SetupGameRequestException;
 import models.api.requests.gameapi.JoinGameRequest;
 import models.api.requests.gameapi.LeaveGameRequest;
 import models.api.requests.gameapi.SetupGameRequest;
@@ -29,13 +32,27 @@ public class GameController implements GameApi {
     @ResponseBody
     @Override
     public GameSetupResponse gameSetup(SetupGameRequest request) {
-
+        GameSetupResponse response = null;
         try {
             verifyRequest.verify(request);
-        } catch (RestRequestException exceptions) {
-
+            response = new GameSetupResponse(); // TODO: 11/26/16 Call service layer
+        } catch (RestRequestException exception) {
+            // Catches any expected errors and writes them into response
+            response = new GameSetupResponse();
+            response.setErrorText(exception.getMessage());
+            if (exception instanceof SetupGameRequestException) {
+                response.setErrorCode(RequestErrorCodes.INVALID_REQUEST);
+            } else if (exception instanceof CommonRequestException) {
+                response.setErrorCode(RequestErrorCodes.MISSING_COMMON_REQUEST_PARAMS);
+            }
+        } catch (Exception exception) {
+            // Catches unexpected errors and writes them into response
+            response = new GameSetupResponse();
+            response.setErrorText("Unexpected System error has occurred");
+            response.setErrorCode(RequestErrorCodes.UNEXPECTED_SYSTEM_ERROR);
+        } finally {
+            return response;
         }
-        return null;
     }
 
     @RequestMapping("/assassin/game/join")

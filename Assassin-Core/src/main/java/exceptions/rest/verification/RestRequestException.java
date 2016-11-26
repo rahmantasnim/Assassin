@@ -21,5 +21,4 @@ public class RestRequestException extends RuntimeException {
         super(exception);
     }
 
-
 }
