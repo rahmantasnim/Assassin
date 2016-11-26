@@ -13,39 +13,19 @@
 
   <groupId>com.mercergroup.app</groupId>
   <artifactId>assassin-rest</artifactId>
-  <packaging>war</packaging>
-
-  <profiles>
-    <profile>
-      <id>main-build</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.tomcat.maven</groupId>
-            <artifactId>tomcat7-maven-plugin</artifactId>
-            <version>${maven.tomcat.plugin.version}</version>
-            <configuration>
-              <path>/assassin</path>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
+  <packaging>jar</packaging>
 
   <dependencies>
-    <dependency>
-      <groupId>org.apache.tomcat.maven</groupId>
-      <artifactId>tomcat7-maven-plugin</artifactId>
-      <version>${maven.tomcat.plugin.version}</version>
-      <type>maven-plugin</type>
-    </dependency>
-
     <dependency>
       <groupId>com.mercergroup.app</groupId>
       <artifactId>assassin-core</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
   </dependencies>
+
 
 </project>
