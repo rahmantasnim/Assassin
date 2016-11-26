@@ -1,6 +1,6 @@
 package endpoints;
 
-import models.api.requests.gameapi.GameSetupRequest;
+import models.api.requests.gameapi.SetupGameRequest;
 import models.api.requests.gameapi.JoinGameRequest;
 import models.api.requests.gameapi.LeaveGameRequest;
 import models.api.requests.gameapi.StartGameRequest;
@@ -14,7 +14,7 @@ import models.api.responses.gameapi.StartGameResponse;
  */
 public interface GameApi {
 
-    public GameSetupResponse gameSetup (GameSetupRequest request);
+    public GameSetupResponse gameSetup (SetupGameRequest request);
 
     public JoinGameResponse joinGame (JoinGameRequest request);
 

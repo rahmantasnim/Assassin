@@ -7,14 +7,4 @@ import models.api.requests.CommonRequest;
  */
 public class LeaveGameRequest extends CommonRequest {
 
-    private int gameroomId;
-
-    public int getGameroomId() {
-        return gameroomId;
-    }
-
-    public void setGameroomId(int gameroomId) {
-        this.gameroomId = gameroomId;
-    }
-
 }

@@ -7,15 +7,20 @@ import models.api.requests.playerapi.MyTargetRequest;
 import models.api.responses.playerapi.GameStateResponse;
 import models.api.responses.playerapi.KillResponse;
 import models.api.responses.playerapi.MyTargetResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import util.VerifyRequest;
 
 /**
  * Created by bekreth on 11/25/16.
  */
 @Controller
 public class PlayerController implements PlayerApi {
+
+    @Autowired
+    private VerifyRequest verifyRequest;
 
     @RequestMapping("/assassin/player/kill")
     @ResponseBody

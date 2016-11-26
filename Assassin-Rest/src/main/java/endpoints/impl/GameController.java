@@ -1,28 +1,40 @@
 package endpoints.impl;
 
 import endpoints.GameApi;
-import models.api.requests.gameapi.GameSetupRequest;
+import exceptions.rest.verification.RestRequestException;
 import models.api.requests.gameapi.JoinGameRequest;
 import models.api.requests.gameapi.LeaveGameRequest;
+import models.api.requests.gameapi.SetupGameRequest;
 import models.api.requests.gameapi.StartGameRequest;
 import models.api.responses.gameapi.GameSetupResponse;
 import models.api.responses.gameapi.JoinGameResponse;
 import models.api.responses.gameapi.LeaveGameResponse;
 import models.api.responses.gameapi.StartGameResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import util.VerifyRequest;
 
 /**
- * Created by bekreth on 11/25/16.
+ * Rest api used to access Gamestate information.
  */
 @Controller
 public class GameController implements GameApi {
 
+    @Autowired
+    private VerifyRequest verifyRequest;
+
     @RequestMapping("/assassin/game/setup")
     @ResponseBody
     @Override
-    public GameSetupResponse gameSetup(GameSetupRequest request) {
+    public GameSetupResponse gameSetup(SetupGameRequest request) {
+
+        try {
+            verifyRequest.verify(request);
+        } catch (RestRequestException exceptions) {
+
+        }
         return null;
     }
 

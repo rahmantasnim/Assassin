@@ -8,11 +8,11 @@ import java.util.Collection;
  * Object for the game state
  */
 public class Game {
-
     private int gameId;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private Collection<Player> players;
+    private Player admin;
     private LocalTime staleTime;
     private int winLimit;
 
@@ -63,5 +63,13 @@ public class Game {
 
     public void setWinLimit(int winLimit) {
         this.winLimit = winLimit;
+    }
+
+    public Player getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Player admin) {
+        this.admin = admin;
     }
 }

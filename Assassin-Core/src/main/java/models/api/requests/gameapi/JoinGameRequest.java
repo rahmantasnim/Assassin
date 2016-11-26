@@ -7,16 +7,7 @@ import models.api.requests.CommonRequest;
  */
 public class JoinGameRequest extends CommonRequest {
 
-    private int gameroomId;
     private String roomPassword;
-
-    public int getGameroomId() {
-        return gameroomId;
-    }
-
-    public void setGameroomId(int gameroomId) {
-        this.gameroomId = gameroomId;
-    }
 
     public String getRoomPassword() {
         return roomPassword;
