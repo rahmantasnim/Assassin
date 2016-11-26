@@ -5,46 +5,48 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mercergroup.app</groupId>
   <artifactId>assassin</artifactId>
-  <version>1</version>
+  <name>Assassin</name>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
 
   <modules>
-    <module>assassin-core</module>
-    <module>assassin-dao</module>
-    <module>assassin-service</module>
-    <module>assassin-rest</module>
+    <module>Assassin-Rest</module>
+    <module>Assassin-DAO</module>
+    <module>Assassin-Service</module>
+    <module>Assassin-Core</module>
   </modules>
 
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.4.2.RELEASE</version>
+  </parent>
+
   <properties>
+    <project.version>1.0-SNAPSHOT</project.version>
     <!-- libraries -->
     <java.version>1.8</java.version>
     <javac>1.8</javac>
     <junit.version>4.12</junit.version>
-    <spring.version>4.2.5.RELEASE</spring.version>
-    <!-- maven plugins -->
-    <maven.version>3.3</maven.version>
-    <tomcat.version>7.0.55</tomcat.version>
-    <checkstyle.plugin.version>2.17</checkstyle.plugin.version>
+    <spring.boot.version>1.4.2.RELEASE</spring.boot.version>
+    <!-- logging -->
+    <logback.version>1.0.13</logback.version>
   </properties>
 
-
   <dependencyManagement>
-    <!-- Spring dependencies -->
     <dependencies>
+      <!-- Spring boot configurations -->
       <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>${spring.version}</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>${spring.boot.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-core</artifactId>
-        <version>${spring.version}</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <version>${spring.boot.version}</version>
       </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-web</artifactId>
-        <version>${spring.version}</version>
-      </dependency>
+
       <!-- Testing dependencies -->
       <dependency>
         <groupId>junit</groupId>
@@ -52,29 +54,16 @@
         <version>${junit.version}</version>
       </dependency>
 
+
+      <!-- Logging -->
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>${logback.version}</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${maven.version}</version>
-          <configuration>
-            <source>${javac.version}</source>
-            <target>${javac.version}</target>
-          </configuration>
-        </plugin>
-
-      </plugins>
-
-    </pluginManagement>
-
-  </build>
-
 
 
 </project>
