@@ -1,10 +1,12 @@
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
- * Created by bekreth on 11/25/16.
+ * Main application start point.
  */
-@SpringBootApplication
+@EnableAutoConfiguration
+@ComponentScan(basePackages = "endpoints.impl")
 public class ApplicationConfig {
     public static void main(String[] args) {
         SpringApplication.run(ApplicationConfig.class, args);
