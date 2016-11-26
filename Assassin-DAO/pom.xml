@@ -3,22 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <dependencies>
-    <dependency>
-      <groupId>com.mercergroup.app</groupId>
-      <artifactId>assassin-core</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
-  </dependencies>
 
   <parent>
-    <groupId>com.mercergroup.app</groupId>
-    <artifactId>assassin</artifactId>
+    <groupId>mercergroup.assassin</groupId>
+    <artifactId>Assassin</artifactId>
     <version>1.0-SNAPSHOT</version>
     <relativePath>./..</relativePath>
   </parent>
 
-  <groupId>com.mercergroup.app</groupId>
-  <artifactId>assassin-dao</artifactId>
+  <artifactId>Assassin-DAO</artifactId>
   <packaging>jar</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>mercergroup.assassin</groupId>
+      <artifactId>Assassin-Core</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
 </project>
