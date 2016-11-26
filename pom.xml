@@ -9,18 +9,18 @@
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
 
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.4.2.RELEASE</version>
-  </parent>
-
   <modules>
     <module>Assassin-Rest</module>
     <module>Assassin-DAO</module>
     <module>Assassin-Service</module>
     <module>Assassin-Core</module>
   </modules>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.4.2.RELEASE</version>
+  </parent>
 
   <properties>
     <project.version>1.0-SNAPSHOT</project.version>
@@ -39,6 +39,7 @@
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
+        <version>${spring.boot.version}</version>
       </dependency>
       <!-- Testing dependencies -->
       <dependency>
@@ -48,5 +49,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
 
 </project>

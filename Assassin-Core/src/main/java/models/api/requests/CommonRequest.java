@@ -7,6 +7,4 @@ public class CommonRequest {
 
     private int playerId;
 
-
-
 }

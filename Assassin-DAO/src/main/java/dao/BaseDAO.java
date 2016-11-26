@@ -1,7 +1,12 @@
 package dao;
 
 /**
- * Created by bekreth on 11/25/16.
+ * The base level interface for the DAO
  */
-public interface BaseDAO {
+public interface BaseDAO<T> {
+
+    public T getObj(T objToGet);
+    public T insertObj(T objToInsert);
+    public T deleteObj(T objToDelete);
+
 }
