@@ -17,9 +17,9 @@
 
   <modules>
     <module>Assassin-Rest</module>
-    <module>Assassin-Core</module>
     <module>Assassin-DAO</module>
     <module>Assassin-Service</module>
+    <module>Assassin-Core</module>
   </modules>
 
   <properties>
@@ -48,14 +48,5 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 
 </project>
