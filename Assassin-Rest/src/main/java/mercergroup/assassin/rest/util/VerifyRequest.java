@@ -1,7 +1,7 @@
 package mercergroup.assassin.rest.util;
 
-import exceptions.rest.verification.CommonRequestException;
-import exceptions.rest.verification.SetupGameRequestException;
+import mercergroup.assassin.core.exceptions.verification.CommonRequestException;
+import mercergroup.assassin.core.exceptions.verification.SetupGameRequestException;
 import mercergroup.assassin.core.exceptions.verification.RestRequestException;
 import mercergroup.assassin.core.models.api.requests.CommonRequest;
 import mercergroup.assassin.core.models.api.requests.adminapi.KickPlayerRequest;

@@ -1,8 +1,8 @@
 package mercergroup.assassin.rest.endpoints.impl;
 
-import exceptions.rest.verification.CommonRequestException;
-import exceptions.rest.verification.RequestErrorCodes;
-import exceptions.rest.verification.SetupGameRequestException;
+import mercergroup.assassin.core.exceptions.verification.CommonRequestException;
+import mercergroup.assassin.core.exceptions.verification.RequestErrorCodes;
+import mercergroup.assassin.core.exceptions.verification.SetupGameRequestException;
 import mercergroup.assassin.core.exceptions.verification.RestRequestException;
 import mercergroup.assassin.core.models.api.requests.gameapi.JoinGameRequest;
 import mercergroup.assassin.core.models.api.requests.gameapi.LeaveGameRequest;
