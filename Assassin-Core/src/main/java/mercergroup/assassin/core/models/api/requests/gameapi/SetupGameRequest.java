@@ -1,6 +1,7 @@
 package mercergroup.assassin.core.models.api.requests.gameapi;
 
 import mercergroup.assassin.core.models.api.requests.CommonRequest;
+import mercergroup.assassin.core.models.api.requests.VerifyVisitor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -54,5 +55,10 @@ public class SetupGameRequest extends CommonRequest {
 
     public void setEndDate(long endDate) {
         this.endDate = endDate;
+    }
+
+    @Override
+    public void visit(VerifyVisitor visitor) {
+        visitor.visit(this);
     }
 }

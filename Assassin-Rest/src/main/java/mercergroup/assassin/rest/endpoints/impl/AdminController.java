@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import mercergroup.assassin.rest.util.VerifyRequest;
+import mercergroup.assassin.rest.util.DefaultVerifyVisitor;
 
 /**
  * Rest API interface for admin to override game state.
@@ -16,7 +16,7 @@ import mercergroup.assassin.rest.util.VerifyRequest;
 public class AdminController implements AdminApi {
 
     @Autowired
-    private VerifyRequest verifyRequest;
+    private DefaultVerifyVisitor defaultVerifyVisitor;
 
     @RequestMapping("/assassin/admin/kickPlayer")
     @ResponseBody

@@ -6,7 +6,6 @@ import mercergroup.assassin.core.models.api.requests.CommonRequest;
 import mercergroup.assassin.core.models.api.requests.gameapi.JoinGameRequest;
 import mercergroup.assassin.core.models.api.requests.gameapi.SetupGameRequest;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -32,10 +31,10 @@ public class RequestGenerator {
         request.setPlayerId(1);
         request.setWinCondition(2);
         request.setRoomPassword("password");
-        request.setUpdatePushTimer(VerifyRequest.HOUR);
-        request.setStaleGameTimer(VerifyRequest.WEEK);
+        request.setUpdatePushTimer(DefaultVerifyVisitor.HOUR);
+        request.setStaleGameTimer(DefaultVerifyVisitor.WEEK);
         Date nextWeek = new Date();
-        nextWeek.setTime(nextWeek.getTime() + VerifyRequest.WEEK);
+        nextWeek.setTime(nextWeek.getTime() + DefaultVerifyVisitor.WEEK);
         request.setEndDate(nextWeek.getTime());
         return request;
     }

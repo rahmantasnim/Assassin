@@ -5,7 +5,7 @@ import java.util.UUID;
 /**
  * A CommonRequest
  */
-public class CommonRequest {
+public abstract class CommonRequest {
 
     private int userId;
     private int playerId;
@@ -43,4 +43,6 @@ public class CommonRequest {
     public String getRequestId() {
         return requestId;
     }
+
+    public abstract void visit(VerifyVisitor visitor);
 }

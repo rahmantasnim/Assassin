@@ -2,8 +2,8 @@ package mercergroup.assassin.rest.endpoints.impl;
 
 import mercergroup.assassin.core.exceptions.verification.CommonRequestException;
 import mercergroup.assassin.core.exceptions.verification.RequestErrorCodes;
-import mercergroup.assassin.core.exceptions.verification.SetupGameRequestException;
 import mercergroup.assassin.core.exceptions.verification.RestRequestException;
+import mercergroup.assassin.core.exceptions.verification.SetupGameRequestException;
 import mercergroup.assassin.core.models.api.requests.gameapi.JoinGameRequest;
 import mercergroup.assassin.core.models.api.requests.gameapi.LeaveGameRequest;
 import mercergroup.assassin.core.models.api.requests.gameapi.SetupGameRequest;
@@ -13,7 +13,9 @@ import mercergroup.assassin.core.models.api.responses.gameapi.JoinGameResponse;
 import mercergroup.assassin.core.models.api.responses.gameapi.LeaveGameResponse;
 import mercergroup.assassin.core.models.api.responses.gameapi.StartGameResponse;
 import mercergroup.assassin.rest.endpoints.GameApi;
-import mercergroup.assassin.rest.util.VerifyRequest;
+import mercergroup.assassin.rest.util.DefaultVerifyVisitor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,9 +26,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class GameController implements GameApi {
+    private static final Logger LOG = LoggerFactory.getLogger(GameController.class);
 
     @Autowired
-    private VerifyRequest verifyRequest;
+    private DefaultVerifyVisitor defaultVerifyVisitor;
 
     @RequestMapping("/assassin/game/setup")
     @ResponseBody
@@ -34,7 +37,7 @@ public class GameController implements GameApi {
     public GameSetupResponse gameSetup(SetupGameRequest request) {
         GameSetupResponse response = null;
         try {
-            verifyRequest.verify(request);
+            request.visit(defaultVerifyVisitor);
             response = new GameSetupResponse(); // TODO: 11/26/16 Call service layer
         } catch (RestRequestException exception) {
             // Catches any expected errors and writes them into response
@@ -47,6 +50,8 @@ public class GameController implements GameApi {
             }
         } catch (Exception exception) {
             // Catches unexpected errors and writes them into response
+            LOG.info("Exception caught for request " + request.getRequestId()
+                    + ". Exception: " + exception.getMessage());
             response = new GameSetupResponse();
             response.setErrorText("Unexpected System error has occurred");
             response.setErrorCode(RequestErrorCodes.UNEXPECTED_SYSTEM_ERROR);
