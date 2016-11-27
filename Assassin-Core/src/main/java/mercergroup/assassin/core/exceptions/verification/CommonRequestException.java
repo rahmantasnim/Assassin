@@ -1,6 +1,4 @@
-package exceptions.rest.verification;
-
-import mercergroup.assassin.core.exceptions.verification.RestRequestException;
+package mercergroup.assassin.core.exceptions.verification;
 
 /**
  * Exceptions for error with CommonRequests

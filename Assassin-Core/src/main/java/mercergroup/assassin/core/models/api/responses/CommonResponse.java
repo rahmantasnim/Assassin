@@ -1,6 +1,6 @@
 package mercergroup.assassin.core.models.api.responses;
 
-import exceptions.rest.verification.RequestErrorCodes;
+import mercergroup.assassin.core.exceptions.verification.RequestErrorCodes;
 
 /**
  * A standard response to be returned from the Assassin backend.
