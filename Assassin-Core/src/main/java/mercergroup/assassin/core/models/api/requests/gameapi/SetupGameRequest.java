@@ -1,6 +1,7 @@
 package mercergroup.assassin.core.models.api.requests.gameapi;
 
 import mercergroup.assassin.core.models.api.requests.CommonRequest;
+import mercergroup.assassin.core.models.api.requests.VerifyVisitor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -12,9 +13,9 @@ public class SetupGameRequest extends CommonRequest {
 
     private String roomPassword;
     private int winCondition;
-    private int updatePushTimer;
-    private int staleGameTimer;
-    private LocalDateTime endDate;
+    private long updatePushTimer;
+    private long staleGameTimer;
+    private long endDate;
 
     public String getRoomPassword() {
         return roomPassword;
@@ -32,27 +33,32 @@ public class SetupGameRequest extends CommonRequest {
         this.winCondition = winCondition;
     }
 
-    public int getUpdatePushTimer() {
+    public long getUpdatePushTimer() {
         return updatePushTimer;
     }
 
-    public void setUpdatePushTimer(int updatePushTimer) {
+    public void setUpdatePushTimer(long updatePushTimer) {
         this.updatePushTimer = updatePushTimer;
     }
 
-    public int getStaleGameTimer() {
+    public long getStaleGameTimer() {
         return staleGameTimer;
     }
 
-    public void setStaleGameTimer(int staleGameTimer) {
+    public void setStaleGameTimer(long staleGameTimer) {
         this.staleGameTimer = staleGameTimer;
     }
 
-    public LocalDateTime getEndDate() {
+    public long getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDateTime endDate) {
+    public void setEndDate(long endDate) {
         this.endDate = endDate;
+    }
+
+    @Override
+    public void visit(VerifyVisitor visitor) {
+        visitor.visit(this);
     }
 }
