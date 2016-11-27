@@ -1,18 +1,20 @@
 package mercergroup.assassin.core.models.api.responses;
 
+import exceptions.rest.verification.RequestErrorCodes;
+
 /**
- * Created by bekreth on 11/8/16.
+ * A standard response to be returned from the Assassin backend.
  */
 public class CommonResponse {
 
-    private String errorCode;
+    private RequestErrorCodes errorCode;
     private String errorText;
 
-    public String getErrorCode() {
+    public RequestErrorCodes getErrorCode() {
         return errorCode;
     }
 
-    public void setErrorCode(String errorCode) {
+    public void setErrorCode(RequestErrorCodes errorCode) {
         this.errorCode = errorCode;
     }
 
