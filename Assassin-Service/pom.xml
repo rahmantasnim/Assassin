@@ -13,4 +13,12 @@
 
   <artifactId>Assassin-Service</artifactId>
   <packaging>jar</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>mercergroup.assassin</groupId>
+      <artifactId>Assassin-Core</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
 </project>
